@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;700;800&family=Caveat:wght@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'ABeeZee', sans-serif;
+  --font-body: 'ABeeZee', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-off-white text-charcoal antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+/* Noise Texture */
+.bg-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Glass Panel Utility */
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+
+.glass-panel-light {
+  @apply bg-white/60 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-off-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-forest-green/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-forest-green;
+}
